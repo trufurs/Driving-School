@@ -1,0 +1,241 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.33-community
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema fproject
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ fproject;
+USE fproject;
+
+--
+-- Table structure for table `fproject`.`c_members`
+--
+
+DROP TABLE IF EXISTS `c_members`;
+CREATE TABLE `c_members` (
+  `M_id` int(9) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Gender` char(1) DEFAULT NULL,
+  `Dob` date DEFAULT NULL,
+  `Aadhar_card` bigint(12) DEFAULT NULL,
+  `Address` varchar(50) DEFAULT NULL,
+  `M_no` bigint(10) DEFAULT NULL,
+  `Doj` varchar(8) DEFAULT NULL,
+  `Fees_Paid` int(7) DEFAULT NULL,
+  `Fees_Delay` int(6) DEFAULT NULL,
+  PRIMARY KEY (`M_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`c_members`
+--
+
+/*!40000 ALTER TABLE `c_members` DISABLE KEYS */;
+/*!40000 ALTER TABLE `c_members` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`cars`
+--
+
+DROP TABLE IF EXISTS `cars`;
+CREATE TABLE `cars` (
+  `No_plate` varchar(10) NOT NULL,
+  `company` varchar(15) DEFAULT NULL,
+  `Model` varchar(15) DEFAULT NULL,
+  `department` varchar(8) DEFAULT NULL,
+  `Feul_type` varchar(8) DEFAULT NULL,
+  `puc` char(1) DEFAULT NULL,
+  `Insurance` char(1) DEFAULT NULL,
+  `availibility` char(1) DEFAULT NULL,
+  PRIMARY KEY (`No_plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`cars`
+--
+
+/*!40000 ALTER TABLE `cars` DISABLE KEYS */;
+INSERT INTO `cars` (`No_plate`,`company`,`Model`,`department`,`Feul_type`,`puc`,`Insurance`,`availibility`) VALUES 
+ ('RJ14557895','model','company','Premium','Electric','N','Y','Y'),
+ ('rj14dd0001','honda','activa','Normal','Feul','Y','Y','Y'),
+ ('rj14yd4578','ifad','gafu','Normal','Desiel','Y','Y','Y');
+/*!40000 ALTER TABLE `cars` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`drivers`
+--
+
+DROP TABLE IF EXISTS `drivers`;
+CREATE TABLE `drivers` (
+  `D_id` varchar(6) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Gender` char(1) DEFAULT NULL,
+  `Dob` varchar(8) DEFAULT NULL,
+  `D_Lisence` varchar(16) DEFAULT NULL,
+  `aadhar_card` bigint(12) DEFAULT NULL,
+  `Address` varchar(30) DEFAULT NULL,
+  `M_no` bigint(10) DEFAULT NULL,
+  `Doj` varchar(8) DEFAULT NULL,
+  `D_test` char(1) DEFAULT NULL,
+  PRIMARY KEY (`D_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`drivers`
+--
+
+/*!40000 ALTER TABLE `drivers` DISABLE KEYS */;
+INSERT INTO `drivers` (`D_id`,`Name`,`Gender`,`Dob`,`D_Lisence`,`aadhar_card`,`Address`,`M_no`,`Doj`,`D_test`) VALUES 
+ ('1122','1312','M','12312','123123',123123,'1231231231',312123,'123123','Y'),
+ ('122222','12333','M','123123','123312',21312,'33123123123',1231233,'123123','Y'),
+ ('123123','123123','M','29122002','123123',123123,'123123',123123,'292002','Y'),
+ ('12333','321312','M','2133','123',123123,'12312312312',123123,'1231123','Y');
+/*!40000 ALTER TABLE `drivers` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`l_drivers`
+--
+
+DROP TABLE IF EXISTS `l_drivers`;
+CREATE TABLE `l_drivers` (
+  `D_id` varchar(6) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Gender` char(1) DEFAULT NULL,
+  `Dob` varchar(8) DEFAULT NULL,
+  `D_Lisence` varchar(16) DEFAULT NULL,
+  `aadhar_card` bigint(12) DEFAULT NULL,
+  `Address` varchar(30) DEFAULT NULL,
+  `M_no` bigint(10) DEFAULT NULL,
+  `Doj` varchar(8) DEFAULT NULL,
+  `D_test` char(1) DEFAULT NULL,
+  PRIMARY KEY (`D_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`l_drivers`
+--
+
+/*!40000 ALTER TABLE `l_drivers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `l_drivers` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`login`
+--
+
+DROP TABLE IF EXISTS `login`;
+CREATE TABLE `login` (
+  `u` varchar(20) DEFAULT NULL,
+  `p` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`login`
+--
+
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` (`u`,`p`) VALUES 
+ ('a','b');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`members`
+--
+
+DROP TABLE IF EXISTS `members`;
+CREATE TABLE `members` (
+  `M_id` int(9) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  `Gender` char(1) DEFAULT NULL,
+  `Dob` date DEFAULT NULL,
+  `Aadhar_card` bigint(12) DEFAULT NULL,
+  `Address` varchar(50) DEFAULT NULL,
+  `M_no` bigint(10) DEFAULT NULL,
+  `Doj` varchar(8) DEFAULT NULL,
+  `Fees_Paid` int(7) DEFAULT NULL,
+  `Fees_Delay` int(6) DEFAULT NULL,
+  PRIMARY KEY (`M_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`members`
+--
+
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`mlogin`
+--
+
+DROP TABLE IF EXISTS `mlogin`;
+CREATE TABLE `mlogin` (
+  `login_id` varchar(30) NOT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`login_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`mlogin`
+--
+
+/*!40000 ALTER TABLE `mlogin` DISABLE KEYS */;
+INSERT INTO `mlogin` (`login_id`,`password`) VALUES 
+ ('first ','project');
+/*!40000 ALTER TABLE `mlogin` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `fproject`.`routine`
+--
+
+DROP TABLE IF EXISTS `routine`;
+CREATE TABLE `routine` (
+  `No_plate` varchar(10) NOT NULL,
+  `6_7AM` varchar(50) DEFAULT NULL,
+  `7_8AM` varchar(50) DEFAULT NULL,
+  `3_4PM` varchar(50) DEFAULT NULL,
+  `4_5PM` varchar(50) DEFAULT NULL,
+  `5_6PM` varchar(50) DEFAULT NULL,
+  `6_7PM` varchar(50) DEFAULT NULL,
+  `7_8PM` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`No_plate`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fproject`.`routine`
+--
+
+/*!40000 ALTER TABLE `routine` DISABLE KEYS */;
+INSERT INTO `routine` (`No_plate`,`6_7AM`,`7_8AM`,`3_4PM`,`4_5PM`,`5_6PM`,`6_7PM`,`7_8PM`) VALUES 
+ ('RJ14557895','2131243','m123/d123','','','','q14134',''),
+ ('rj14dd0001','','','','','','',''),
+ ('RJ14YD4539','','','','','','','');
+/*!40000 ALTER TABLE `routine` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
