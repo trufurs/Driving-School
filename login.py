@@ -53,7 +53,7 @@ def _login(mlog):
     k.geometry("%sx%s"%(1000,650))
     text1="Driving School"
     draw = ImageDraw.Draw(image)
-    width_text, height_text = draw.textsize(text1)
+    _, _,width_text, height_text = draw.textbbox((0, 0), text=text1)
     photoimage = ImageTk.PhotoImage(image)
     B=Label(mlog, image=photoimage)
     B.place(x=0,y=0)
